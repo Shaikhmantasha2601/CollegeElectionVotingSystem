@@ -1,0 +1,174 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', sans-serif;
+}
+
+body{
+    background:#f7f4f1;
+    color:#333;
+    min-height:100vh;
+}
+
+.container{
+    width:90%;
+    max-width:1000px;
+    margin:auto;
+    padding:30px;
+}
+
+.main-title{
+    text-align:center;
+    font-size:60px;
+    color:#5c4b43;
+    margin-top:20px;
+    margin-bottom:10px;
+}
+
+.sub-title{
+    text-align:center;
+    color:#7d5a50;
+    margin-bottom:30px;
+}
+
+.page-title{
+    text-align:center;
+    margin-bottom:30px;
+    color:#5c4b43;
+}
+
+.dashboard-grid{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+    align-items:center;
+}
+
+.dashboard-box{
+    width:450px;
+    max-width:90%;
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    text-decoration:none;
+    color:#5c4b43;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.dashboard-box:hover{
+    transform:translateY(-5px);
+}
+
+.dashboard-box h3{
+    font-size:28px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    margin-bottom:20px;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+.card h2{
+    color:#7d5a50;
+    margin-bottom:10px;
+}
+
+.card h3{
+    color:#2f855a;
+}
+
+.party-title{
+    text-align:center;
+    margin:30px 0 20px;
+    color:#5c4b43;
+}
+
+form{
+    width:100%;
+}
+
+label{
+    display:block;
+    margin-bottom:8px;
+    color:#5c4b43;
+    font-weight:600;
+}
+
+input,
+textarea,
+select{
+    width:100%;
+    padding:14px;
+    margin-bottom:15px;
+    border:none;
+    border-radius:12px;
+    background:#f2ece8;
+    font-size:15px;
+}
+
+textarea{
+    height:120px;
+    resize:none;
+}
+
+.btn,
+button,
+.delete-btn{
+    display:inline-block;
+    background:#7d5a50;
+    color:white;
+    padding:12px 20px;
+    border:none;
+    border-radius:12px;
+    text-decoration:none;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn:hover,
+button:hover{
+    background:#61463d;
+}
+
+.delete-btn{
+    background:#dc3545;
+}
+
+.delete-btn:hover{
+    background:#b02a37;
+}
+
+.success-card{
+    text-align:center;
+}
+
+.chart-card{
+    text-align:center;
+}
+
+.pie-chart{
+    width:100%;
+    max-width:500px;
+    margin-top:20px;
+}
+
+@media(max-width:768px){
+    .main-title{
+        font-size:40px;
+    }
+
+    .dashboard-box{
+        width:100%;
+    }
+
+    .container{
+        width:95%;
+        padding:20px;
+    }
+}
