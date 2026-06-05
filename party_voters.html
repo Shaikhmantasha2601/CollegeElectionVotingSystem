@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Party Voters</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    {% if party %}
+
+    <h1 class="page-title">
+        Voters For {{ party[0] }}
+    </h1>
+
+    {% else %}
+
+    <h1 class="page-title">
+        Party Not Found
+    </h1>
+
+    {% endif %}
+
+    {% if voters %}
+
+        {% for voter in voters %}
+
+        <div class="card">
+
+            <h2>{{ voter[0] }}</h2>
+
+            <p>
+                Category: {{ voter[1] }}
+            </p>
+
+            <h3>
+                Points: {{ voter[2] }}
+            </h3>
+
+        </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <div class="card">
+            <h2>No Voters Yet</h2>
+            <p>No one has voted for this party yet.</p>
+        </div>
+
+    {% endif %}
+
+    <br>
+
+    <a href="/results" class="btn">Back To Results</a>
+    <a href="/" class="btn">Back To Dashboard</a>
+
+</div>
+
+</body>
+</html>

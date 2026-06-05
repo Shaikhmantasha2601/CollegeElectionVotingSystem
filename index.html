@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Election</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1 class="main-title">
+        ELECTION
+    </h1>
+
+    <h2 class="sub-title">
+        Dashboard
+    </h2>
+
+    <div class="dashboard-grid">
+
+        <a href="/register_party" class="dashboard-box">
+            <h3>Enroll Election Party</h3>
+        </a>
+
+        <a href="/vote" class="dashboard-box">
+            <h3>Vote</h3>
+        </a>
+
+        <a href="/results" class="dashboard-box">
+            <h3>Results</h3>
+        </a>
+
+    </div>
+
+    <br>
+
+    {% if parties %}
+
+    <h2 class="party-title">
+        Registered Election Parties
+    </h2>
+
+    {% for party in parties %}
+
+    <div class="card">
+
+        <h2>{{ party[1] }}</h2>
+
+        <p>
+            {{ party[2] }}
+        </p>
+
+        <a href="/delete_party/{{ party[0] }}"
+           class="delete-btn"
+           onclick="return confirm('Delete this party?')">
+            Delete Party
+        </a>
+
+    </div>
+
+    {% endfor %}
+
+    {% else %}
+
+    <div class="card">
+
+        <h2>No Parties Registered</h2>
+
+        <p>
+            Click "Enroll Election Party"
+            to add a party.
+        </p>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+</body>
+</html>

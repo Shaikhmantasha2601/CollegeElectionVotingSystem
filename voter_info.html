@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Voter Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1 class="page-title">Voter Information</h1>
+
+    <div class="card">
+
+        <form method="POST">
+
+            <label>Voter Name</label>
+
+            <input
+                type="text"
+                name="voter_name"
+                placeholder="Enter your name"
+                required>
+
+            <label>Select Category</label>
+
+            <select name="voter_type" required>
+                <option value="">Choose Category</option>
+                <option value="Teacher">Teacher - 20 Points</option>
+                <option value="Student">Student - 10 Points</option>
+                <option value="Parent">Parent - 5 Points</option>
+            </select>
+
+            <button type="submit">Continue To Vote</button>
+
+        </form>
+
+    </div>
+
+    <br>
+
+    <a href="/" class="btn">Back To Dashboard</a>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Enroll Election Party</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1 class="page-title">Enroll Election Party</h1>
+
+    <div class="card">
+
+        <form method="POST">
+
+            <label>Party Name</label>
+
+            <input
+                type="text"
+                name="party_name"
+                placeholder="Enter Party Name"
+                required>
+
+            <label>Party Features / Manifesto</label>
+
+            <textarea
+                name="features"
+                placeholder="Enter party features, goals, promises"
+                required></textarea>
+
+            <button type="submit">Register Party</button>
+
+        </form>
+
+    </div>
+
+    <br>
+
+    <a href="/" class="btn">Back To Dashboard</a>
+
+</div>
+
+</body>
+</html>

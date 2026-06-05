@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Party</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1 class="page-title">Select Nominee Party</h1>
+
+    {% if parties %}
+
+        {% for party in parties %}
+
+        <div class="card">
+
+            <h2>{{ party[1] }}</h2>
+            <p>{{ party[2] }}</p>
+
+            <form method="POST">
+
+                <input
+                    type="hidden"
+                    name="party_id"
+                    value="{{ party[0] }}">
+
+                <button type="submit">
+                    Vote For This Party
+                </button>
+
+            </form>
+
+        </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <div class="card">
+            <h2>No Parties Available</h2>
+            <p>Please register an election party first.</p>
+        </div>
+
+    {% endif %}
+
+    <br>
+
+    <a href="/" class="btn">Back To Dashboard</a>
+
+</div>
+
+</body>
+</html>

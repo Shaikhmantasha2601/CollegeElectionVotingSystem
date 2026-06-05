@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Election Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1 class="page-title">Election Results</h1>
+
+    {% if chart_exists %}
+
+    <div class="card chart-card">
+
+        <h2>Result Percentage Chart</h2>
+
+        <img
+            src="{{ url_for('static', filename='results_pie.png') }}"
+            class="pie-chart"
+            alt="Election Results Pie Chart">
+
+    </div>
+
+    {% endif %}
+
+    {% if results %}
+
+        {% for result in results %}
+
+        <div class="card">
+            <h2>{{ result[1] }}</h2>
+
+            <h3>Total Points: {{ result[2] }}</h3>
+
+            <br>
+
+            <a href="/party_voters/{{ result[0] }}" class="btn">
+                View Voters
+            </a>
+        </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <div class="card">
+            <h2>No Results Available</h2>
+            <p>No parties have been registered yet.</p>
+        </div>
+
+    {% endif %}
+
+    <br>
+
+    <a href="/" class="btn">Back To Dashboard</a>
+
+</div>
+
+</body>
+</html>
